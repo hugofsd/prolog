@@ -4,12 +4,24 @@
 % Hugo França da Silva Dias Pereira
 % N2393D-3 CC6P/Q39
 % 11/10/2020  
-%------------------------------------------------------------------------------
 
-%---------------------------------------------------------------------------
-% Declarando métodos dinâmicos
+%
+%% Movimentos vitoriosos
+%% iniciar.
+%% s.
+%% s.
+%% {pegou ouro}
+%% d.
+%% d.
+%% d.
+%% {pegou ouro}
+%% a.
+%% a.
+%% a.
+%% w.
+%% w.
+%% venceu
 
-% dinâmico
 :- dynamic 
 ([
     var_tamanho_mundo/1,
@@ -24,8 +36,7 @@
 ]).
 
 
-%------------------------------------------------------------------------------
-% Para começar o jogo
+%% inicio
 iniciar :-
     %% chamando predicados de resetar
     resetar_tudo,
@@ -60,7 +71,7 @@ iniciar_fatos :-
 
     %% localizacao do abismo
     assert(var_actor_a(1,4)),
-    assert(var_actor_a(3,2)),
+    assert(var_actor_a(3,2)),    
 
     %% quantidade maxima de ouro que diz quando ganhou -> 
     %% deixei 200 pq coloquei apenas dois lugares de ouro
@@ -102,7 +113,7 @@ s :-
     NovoValor is LYB+1,
     andar(LXB,NovoValor).
 
-%% -------------- start movimentacoes ...............................
+%% -------------- start movimentacoes
 andar(X,Y):-
     
     %% verificar se pode andar na direção solicitada
@@ -180,14 +191,14 @@ verificar_percepcao(X,Y):-
         )
         ;
         (
-            writeln('Parece não ter cheiro ruim por aqui!')
+            writeln('Parece não ter cheiro ruim aqui!')
         )
 
     ),
     (
         (
             (tem_abismo(X,ZY1); tem_abismo(X,ZY2); tem_abismo(ZX1,Y); tem_abismo(ZX2,Y))
-            -> writeln('Você sentiu uma brisa!')
+            -> writeln('Você sentiu uma brisa neste lugar!')
         )
         ;
         (
@@ -225,4 +236,4 @@ mostrar_ouro:-
     write('Você carrega: '), write(OUR), writeln(' unidades de ouro').
 
 msg_continuar:-
-    writeln('Continue o jogar').
+    writeln('Continue a jogar').
