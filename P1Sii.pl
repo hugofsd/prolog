@@ -102,7 +102,7 @@ s :-
     NovoValor is LYB+1,
     andar(LXB,NovoValor).
 
-%% -------------- start movimentacoes
+%% -------------- start movimentacoes ...............................
 andar(X,Y):-
     
     %% verificar se pode andar na direção solicitada
