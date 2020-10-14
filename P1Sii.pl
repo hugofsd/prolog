@@ -180,14 +180,14 @@ verificar_percepcao(X,Y):-
         )
         ;
         (
-            writeln('Parece não ter cheiro ruim aqui!')
+            writeln('Parece não ter cheiro ruim por aqui!')
         )
 
     ),
     (
         (
             (tem_abismo(X,ZY1); tem_abismo(X,ZY2); tem_abismo(ZX1,Y); tem_abismo(ZX2,Y))
-            -> writeln('Você sentiu uma brisa neste lugar!')
+            -> writeln('Você sentiu uma brisa!')
         )
         ;
         (
@@ -225,4 +225,4 @@ mostrar_ouro:-
     write('Você carrega: '), write(OUR), writeln(' unidades de ouro').
 
 msg_continuar:-
-    writeln('Continue a jogar').
+    writeln('Continue o jogar').
